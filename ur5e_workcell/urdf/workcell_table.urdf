@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur5e_fixture_table">
+
+  <xacro:macro name="fixture_table" params="prefix">
+
+    <link name="${prefix}_fixture_table_link">
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="9.31392" />
+        <inertia ixx="0.701959104" ixy="0" ixz="0"
+                 iyy="1.0452288" iyz="0" izz="1.446658752" />
+      </inertial>
+
+      <visual>
+        <geometry>
+          <mesh filename="package://ur5e_workcell/meshes/fixture_table.stl"/>
+        </geometry>
+        <material name="fixture_gray">
+          <color rgba="0.5 0.5 0.5 1"/>
+        </material>
+      </visual>
+
+      <collision>
+        <geometry>
+          <mesh filename="package://ur5e_workcell/meshes/fixture_table.stl"/>
+        </geometry>
+      </collision>
+
+    </link>
+
+  </xacro:macro>
+
+</robot>

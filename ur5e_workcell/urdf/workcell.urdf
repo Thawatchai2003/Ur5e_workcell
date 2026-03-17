@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="ur5e_workcell_base">
+
+  <link name="workcell_base_link">
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="9.31392" />
+      <inertia ixx="0.701959104" ixy="0" ixz="0"
+               iyy="1.0452288" iyz="0" izz="1.446658752" />
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://ur5e_workcell/meshes/workcell_table.stl"/>
+      </geometry>
+      <material name="workcell_gray">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://ur5e_workcell/meshes/workcell_table.stl"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+</robot>

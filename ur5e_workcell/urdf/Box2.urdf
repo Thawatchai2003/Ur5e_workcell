@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="box2">
+
+  <!-- ================= BASE BODY ================= -->
+  <link name="box2_base_link">
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.02" ixy="0" ixz="0"
+               iyy="0.02" iyz="0" izz="0.02"/>
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://ur5e_workcell/meshes/meshes_Box2/base_link_BOX2.stl"
+              scale="1 1 0.7"/>
+      </geometry>
+      <material name="box2_body">
+        <color rgba="0.72 0.55 0.38 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://ur5e_workcell/meshes/meshes_Box2/base_link_BOX2.stl"
+              scale="1 1 0.7"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <!-- ================= EDGE / LINE ================= -->
+  <link name="box2_edge_link">
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.001" ixy="0" ixz="0"
+               iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0.139 -0.335 0.08" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="package://ur5e_workcell/meshes/meshes_Box2/Position_line2.stl"/>
+      </geometry>
+      <material name="box2_edge">
+        <color rgba="0.8 0.1 0.1 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://ur5e_workcell/meshes/meshes_Box2/Position_line2.stl"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  <!-- ================= FIXED JOINT ================= -->
+  <joint name="box2_edge_fixed" type="fixed">
+    <parent link="box2_base_link"/>
+    <child link="box2_edge_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
